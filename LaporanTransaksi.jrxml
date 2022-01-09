@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7b6da92-66e6-4237-905e-cc59e690aff0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="167"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT*FROM t_penjualantiket]]>
+	</queryString>
+	<field name="Id_Tiket" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Id_Pembeli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Id_Pesawat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Rute" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tanggal_Berangkat" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="No_Kursi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Harga" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="195" y="12" width="505" height="62" uuid="7b201ae4-d808-42e9-84e6-0e3e38688cf0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENJUALAN TIKET PESAWAT PT.  ANGASA RAYA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="241" y="52" width="459" height="22" uuid="d9ec5b35-3380-46ec-8552-4bf47200311a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Jalan Pegangsaan No. 305 Banjarmasin Telp(057) 468 - 823]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="74" width="383" height="42" uuid="c3441693-3432-41b9-8680-68a24857e71d"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[KOTA BANJARMASIN - KALIMANTAN SELATAN 28328 ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="74" y="12" width="121" height="116" uuid="35cdc800-10bd-4c89-a4a6-0c51a8cec943"/>
+				<imageExpression><![CDATA["C:\\Users\\User\\Downloads\\Pesawat2.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="750b3a39-040e-4601-8715-eb1383290deb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="16" y="0" width="100" height="15" forecolor="#736343" uuid="d0601c0f-c8ff-40a8-9341-591d8717de19"/>
+				<text><![CDATA[ID Tiket]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="90" y="0" width="100" height="15" forecolor="#736343" uuid="0e998532-373f-4d9b-960f-65c067c36ed3"/>
+				<text><![CDATA[ID Pembeli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="190" y="1" width="100" height="15" forecolor="#736343" uuid="6a5178bc-3014-4d70-b574-0e5e454ed190"/>
+				<text><![CDATA[ID Pesawat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="314" y="0" width="100" height="15" forecolor="#736343" uuid="3b0d54ec-3bf8-4149-86e1-a059757d5df5"/>
+				<text><![CDATA[Rute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="416" y="0" width="124" height="15" forecolor="#736343" uuid="2e9dc80d-b57f-48d7-85cd-1b0fcef2e140"/>
+				<text><![CDATA[Tanggal Berangkat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="555" y="1" width="100" height="15" forecolor="#736343" uuid="7eefb382-0b69-4979-9a5f-863f0eed7482"/>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="616" y="0" width="100" height="15" forecolor="#736343" uuid="ea63fda5-290a-48bb-bdec-87f88babcd8d"/>
+				<text><![CDATA[No Kursi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="716" y="0" width="100" height="15" forecolor="#736343" uuid="c848e5d5-af22-4894-b8cf-a7dab2c9347f"/>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="1" y="7" width="802" height="15" uuid="79ee4132-0758-4cf9-8ccc-fcea179af602"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="27" y="0" width="100" height="15" uuid="5f9d4f62-617a-424d-92f0-de9be2c48a15"/>
+					<textFieldExpression><![CDATA[$F{Id_Tiket}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="213" y="0" width="100" height="15" uuid="13967d67-80fd-4d3d-8997-34f23e31f626"/>
+					<textFieldExpression><![CDATA[$F{Id_Pesawat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="275" y="0" width="194" height="15" uuid="ec115d97-70fb-48c3-b3e2-c5759b374c42"/>
+					<textFieldExpression><![CDATA[$F{Rute}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="425" y="0" width="100" height="15" uuid="8b435bcc-6a74-4ce8-883c-dea4bb832337"/>
+					<textFieldExpression><![CDATA[$F{Tanggal_Berangkat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="554" y="0" width="100" height="15" uuid="27e8edb4-31cb-42f6-a047-99758fcfb75b"/>
+					<textFieldExpression><![CDATA[$F{Kelas}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="639" y="0" width="100" height="15" uuid="987f6f76-6a97-482e-bcbc-66e399cd8024"/>
+					<textFieldExpression><![CDATA[$F{No_Kursi}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="715" y="0" width="62" height="15" uuid="d8f30612-11d6-4771-9684-30723805f433"/>
+					<textFieldExpression><![CDATA[$F{Harga}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="110" y="0" width="100" height="15" uuid="ee3c0b37-ea6c-48c9-be53-22786f7d40ab"/>
+					<textFieldExpression><![CDATA[$F{Id_Pembeli}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="19471036-da57-4289-83b6-ba323ae575eb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="e52beff3-7b54-43b2-b30a-dd91bd0ddb47"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="84876d7a-a98a-4cd6-bac3-2b18009e7b8d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="88e6f21b-20ce-4c67-b45f-40cdebc0ae19"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="869c6423-848c-4da0-b23a-3630fbed96ae"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="30a8d7a6-970b-475f-9c13-148cea69690c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM t_rute]]>
+	</queryString>
+	<field name="Id_Rute" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Rute" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Harga" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="98" y="17" width="414" height="62" uuid="37369610-b3de-4a8b-8081-7c8ace561735"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA RUTE PESAWAT PT. ANGASA RAYA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="113" y="69" width="399" height="22" uuid="d60cb141-438b-4b4b-82a8-4e735d64d0fe"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Jalan Pegangsaan No. 305 Banjarmasin Telp(057) 468 - 823]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="91" width="383" height="42" uuid="db89111e-9357-46a9-b94a-28f09aaf74d4"/>
+				<textElement textAlignment="Right">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[KOTA BANJARMASIN - KALIMANTAN SELATAN 28328 ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="27" width="112" height="99" uuid="0a3fa07b-81df-4b28-9d2c-a0b440e37e0f"/>
+				<imageExpression><![CDATA["C:\\Users\\User\\Downloads\\Pesawat2.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="9fe7472c-b735-4f17-a058-a8d30cc1050c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="41" y="1" width="138" height="15" forecolor="#736343" uuid="43d21538-95d7-4ae0-80df-69282b04a0c1"/>
+				<text><![CDATA[Id_Rute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="169" y="2" width="138" height="15" forecolor="#736343" uuid="b1072993-5f4b-4748-8d96-8f5d5fbe6d38"/>
+				<text><![CDATA[Rute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="294" y="2" width="138" height="15" forecolor="#736343" uuid="9c203c78-d8e2-466e-ab2d-9d0d9c37bde3"/>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="383" y="0" width="138" height="15" forecolor="#736343" uuid="becaeae7-7cce-4f81-9a6c-56ecac64be17"/>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="28d2a2b0-7661-4840-a073-6391fde0c141"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="294" y="0" width="138" height="15" uuid="6c63c657-a126-4f29-9b7c-991a98d2cbdc"/>
+					<textFieldExpression><![CDATA[$F{Kelas}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="383" y="0" width="138" height="15" uuid="79efd88e-e197-4dc1-acb1-6c4559b93647"/>
+					<textFieldExpression><![CDATA[$F{Harga}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="125" y="0" width="138" height="15" uuid="a96c6104-c563-40da-b93d-1adcbd2f8dd5"/>
+					<textFieldExpression><![CDATA[$F{Rute}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="41" y="0" width="138" height="15" uuid="3b78b2b8-a08f-4d8b-b038-69c58eba8058"/>
+					<textFieldExpression><![CDATA[$F{Id_Rute}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="9f58b510-33a3-4a26-9640-e9a7e8785c36"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="7017d89f-112f-4079-8c14-2d8e41019cda"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="db4259d3-211d-4380-a4c3-58f911f0eb84"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="835582da-0b84-449b-8cfb-ff81d03dfbff"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="f1373b1f-7f35-42bf-a6e2-35da3a203dce"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
